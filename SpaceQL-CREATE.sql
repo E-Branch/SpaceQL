@@ -21,9 +21,9 @@ CREATE TABLE DiscoveredLargeObjects (
 );
 
 CREATE TABLE Planets ( 
-    PlanetID integer,
-	OrbitalPeriod integer,
-	RotationalPeriod integer,
+    	PlanetID integer,
+	OrbitalPeriod double,
+	RotationalPeriod double,
 	PRIMARY KEY (PlanetID),
 	FOREIGN KEY (PlanetID) REFERENCES
 	DiscoveredLargeObjects(LargeObjID)
@@ -64,8 +64,8 @@ CREATE TABLE Moons (
 	Name char(20),
 	PlanetID integer,
 	Diameter integer,
-	RotationalPeriod integer,
-	OrbitalPeriod integer,
+	RotationalPeriod double,
+	OrbitalPeriod double,
 	OrbitDistance integer,
 	OrbitSpeed integer,
 	PRIMARY KEY (Name, PlanetID),
