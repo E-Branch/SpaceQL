@@ -22,8 +22,8 @@ CREATE TABLE DiscoveredLargeObjects (
 
 CREATE TABLE Planets ( 
     PlanetID integer,
-	RotationalPeriod integer,
 	OrbitalPeriod integer,
+	RotationalPeriod integer,
 	PRIMARY KEY (PlanetID),
 	FOREIGN KEY (PlanetID) REFERENCES
 	DiscoveredLargeObjects(LargeObjID)
