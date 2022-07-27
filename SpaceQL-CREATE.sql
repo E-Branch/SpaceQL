@@ -65,7 +65,7 @@ CREATE TABLE Moons (
 	PlanetID integer,
 	Diameter integer,
 	RotationalPeriod integer,
-	OrbitalPeriod
+	OrbitalPeriod integer,
 	OrbitDistance integer,
 	OrbitSpeed integer,
 	PRIMARY KEY (Name, PlanetID),
