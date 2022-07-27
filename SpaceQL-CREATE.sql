@@ -65,7 +65,9 @@ CREATE TABLE Moons (
 	PlanetID integer,
 	Diameter integer,
 	RotationalPeriod integer,
+	OrbitalPeriod
 	OrbitDistance integer,
+	OrbitSpeed integer,
 	PRIMARY KEY (Name, PlanetID),
 	FOREIGN KEY (PlanetID) REFERENCES Planets(PlanetID)
 		ON DELETE CASCADE
@@ -170,6 +172,7 @@ CREATE TABLE Orbit (
 PlanetID integer,
 StarID integer,
 OrbitDist integer,
+OrbitSpd integer,
 PRIMARY KEY (PlanetID, StarID),
 FOREIGN KEY (PlanetID) REFERENCES Planets(PlanetID)
 	ON DELETE CASCADE
@@ -276,5 +279,3 @@ Telescopes(TelID)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 );
-
-
