@@ -30,8 +30,8 @@ INSERT INTO Stars VALUES ('0009', 'Carbon, Oxygen');
 INSERT INTO Galaxies VALUES ('001','Milky Way', '105,700');
 INSERT INTO Galaxies VALUES ('002', 'Andromeda', '220,000');
 
-INSERT INTO SolarSystemInGalaxy VALUES ('01','001','Our System', '287460000000');
-INSERT INTO SolarSystemInGalaxy VALUES ('02', '001', 'Proxima System', '324460000000');
+INSERT INTO SolarSystemInGalaxy VALUES ('01','001','Our System', '79');
+INSERT INTO SolarSystemInGalaxy VALUES ('02', '001', 'Proxima System', '1.489');
 
 INSERT INTO Moons VALUES ('The Moon', '0000', '3475', '29.530589', '29.530589', '384400', '1000');
 INSERT INTO Moons VALUES ('Titan', '0006', '5149', '15.945', '15.945', '1221850', '5570');
