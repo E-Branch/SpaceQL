@@ -29,11 +29,26 @@ INSERT INTO Stars VALUES ('0009', 'Carbon, Oxygen');
 
 INSERT INTO Galaxies VALUES ('001','Milky Way', '105,700');
 INSERT INTO Galaxies VALUES ('002', 'Andromeda', '220,000');
+INSERT INTO Galaxies VALUES ('003', 'Pinwheel Galaxy', '170,000');
+
 
 INSERT INTO SolarSystemInGalaxy VALUES ('01','001','Our System', '79');
 INSERT INTO SolarSystemInGalaxy VALUES ('02', '001', 'Proxima System', '1.489');
+INSERT into SolarSystemInGalaxy VALUES ('03', '001', 'Gliese 876 System', '0.72');
 
 INSERT INTO Moons VALUES ('The Moon', '0000', '3475', '29.530589', '29.530589', '384400', '1000');
 INSERT INTO Moons VALUES ('Titan', '0006', '5149', '15.945', '15.945', '1221850', '5570');
 INSERT INTO Moons VALUES ('Rhea', '0006', '1528', '4.518212', '4.518212', '527040', '8480');
 
+INSERT INTO Astronauts VALUES ('1101', 'Neil', 'Armstrong', '1930-08-05');
+INSERT INTO Astronauts VALUES ('1102', 'Buzz', 'Aldrin', '1930-01-20');
+INSERT INTO Astronauts VALUES ('1103', 'Pete', 'Conrad', '1930-06-02');
+INSERT INTO Astronauts VALUES ('1104', 'Alan', 'Bean', '1932-03-15');
+INSERT INTO Astronauts VALUES ('1105', 'Alan', 'Shepard', '1923-11-18');
+INSERT INTO Astronauts VALUES ('1106', 'Frank', 'Borman', '1928-03-14');
+INSERT INTO Astronauts VALUES ('1107', 'Jim', 'Lovell', '1928-03-25');
+INSERT INTO Astronauts VALUES ('1108', 'Bill', 'Anders', '1933-10-17');
+INSERT INTO Astronauts VALUES ('1109', 'Tom', 'Stafford', '1930-09-17');
+INSERT INTO Astronauts VALUES ('1110', 'Michael', 'Collins', '1930-10-31');
+INSERT INTO Astronauts VALUES ('1111', 'Yuri', 'Gagarin', '1934-03-09');
+INSERT INTO Astronauts VALUES ('1112', 'Valentina', 'Tereshkova', '1937-03-06');
