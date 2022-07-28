@@ -21,7 +21,7 @@ CREATE TABLE DiscoveredLargeObjects (
 );
 
 CREATE TABLE Planets ( 
-    	PlanetID integer,
+    PlanetID integer,
 	OrbitalPeriod float,
 	RotationalPeriod float,
 	PRIMARY KEY (PlanetID),
