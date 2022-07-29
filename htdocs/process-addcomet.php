@@ -2,7 +2,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-
 <body>
     <div class="navbar">
         <div class="navbar__container">
@@ -16,7 +15,7 @@
             </ul>
         </div>
     </div>
-    
+
     <div class="main">
         <div class="main__container-2">
             <div class="main__content">
@@ -25,34 +24,28 @@
                     $conn = OpenCon();
                     $name = $_POST['name'];
                     $diameter = $_POST['diameter'];
-                    $mass = $_POST['mass'];
-                    $discoverdate = $_POST['discoverdate'];
-                    $orbitalperiod = $_POST['orbitalperiod'];
-                    $rotationalperiod = $_POST['rotationalperiod'];
-                    $discoverspaceagency = $_POST['spaceagencyid'];
-                    $largeobjid = rand();
+                    $discoverydate = $_POST['discoverydate'];
+                    $visiblefromearth = $_POST['visiblefromearth'];
+                    $spaceagencyid = $_POST['spaceagencyid'];
+                    $minobjid = rand();
 
-                    $result = $conn->query("select largeobjid from discoveredlargeobjects");
+
+                    $result = $conn->query("select minobjid from discoveredminorobjects");
                     while ($row = $result->fetch_assoc()) {
                         unset($id);
-                        $id = $row['largeobjid'];
-                        if($largeobjid == $id){
-                            $largeobjid = rand();
+                        $id = $row['minobjid'];
+                        if($minobjid == $id){
+                            $minobjid = rand();
                         }
                     }
                     
-                    if(strcmp($discoverspaceagency,"NULL") == 0) {
-                        $sql = "INSERT INTO DiscoveredLargeObjects VALUES ('$largeobjid','$name','$diameter','$mass',NULL,'$discoverdate');";
-                    }
-                    else {
-                        $sql = "INSERT INTO DiscoveredLargeObjects VALUES ('$largeobjid','$name','$diameter','$mass','$discoverspaceagency','$discoverdate');";
-                    }
+                    $sql = "INSERT INTO DiscoveredMinorObjects VALUES ('$minobjid','$name','$diameter', '$spaceagencyid','$discoverydate');";
                     if ($conn->query($sql) === TRUE) { 
                     } 
                     else {
                         echo "Error updating record: " . $conn->error;
                     }
-                    $sql = "INSERT INTO Planets VALUES ('$largeobjid','$orbitalperiod','$rotationalperiod');";
+                    $sql = "INSERT INTO Comets VALUES ('$minobjid','$visiblefromearth')";
                     if ($conn->query($sql) === TRUE) { 
                         echo "<h2>Record updated successfully</h2>";
                     } 

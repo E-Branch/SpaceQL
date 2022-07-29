@@ -74,13 +74,6 @@
     align-items: center;
     }
 
-    .small {
-        background: #131313;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    }
 
     .services__container {
     display: flex;
@@ -88,11 +81,6 @@
     flex-wrap: wrap;
     }
 
-    .small__container {
-        display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    }
 
     .services__card {
     margin: 1rem;
@@ -154,34 +142,96 @@
         background-image: url("/images/jupiter.jpg");
     }
 
-    .small__card-1 {
+    .services__card-5{
         height: 425px;
         width: 250px;
-        background-image: url("/images/jupiter.jpg");
+        background-image: url("/images/star.jpg");
+    }
+
+    .services__card-6{
+        height: 425px;
+        width: 250px;
+        background-image: url("/images/sa.jpg");
+    }
+
+    .services__card-7{
+        height: 425px;
+        width: 250px;
+        background-image: url("/images/galaxy.jpg");
+    }
+
+    .services__card-8{
+        height: 425px;
+        width: 250px;
+        background-image: url("/images/ss.jpg");
+    }
+
+    .services__card-9{
+        height: 425px;
+        width: 250px;
+        background-image: url("/images/moon.jpg");
+    }
+
+    .services__card-10{
+        height: 425px;
+        width: 250px;
+        background-image: url("/images/astronaut.jpg");
+    }
+
+    .services__card-11{
+        height: 425px;
+        width: 250px;
+        background-image: url("/images/sat.jpg");
+    }
+
+    .services__card-12{
+        height: 425px;
+        width: 250px;
+        background-image: url("/images/telescope.jpg");
+    }
+
+    .services__card-13{
+        height: 425px;
+        width: 250px;
+        background-image: url("/images/rovers.jpg");
+    }
+
+    .services__card-14{
+        height: 425px;
+        width: 250px;
+        background-image: url("/images/station.jpg");
+    }
+
+    .services__card-15{
+        height: 425px;
+        width: 250px;
+        background-image: url("/images/asteroid.png");
+    }
+
+    .services__card-16{
+        height: 425px;
+        width: 250px;
+        background-image: url("/images/meteor.jpg");
+    }
+
+    .services__card-17{
+        height: 425px;
+        width: 250px;
+        background-image: url("/images/comet.jpg");
     }
 
     .services__card h2 {
     position: absolute;
-    top: 350px;
+    top: 370px;
     left: 30px;
+    height: 25px;
+
     }
 
     .services__card p {
-    position: absolute;
-    top: 400px;
-    left: 30px;
-    }
-
-    .small__card h2 {
-        position: absolute;
-        top: 350px;
-        left: 30px;
-    }
-
-    .small__card p {
-        position: absolute;
-        top: 400px;
-        left: 30px;  
+        position: relative; 
+        color:#5e72eb;
+        font-weight: bold;
     }
 
     .services__card:hover {
@@ -194,6 +244,122 @@
         transform: none;
         transition: none;
     }
+    .services__card-5:hover{
+        transform: none;
+        transition: none;
+    }
+    .services__card-6:hover{
+        transform: none;
+        transition: none;
+    }
+    .services__card-7:hover{
+        transform: none;
+        transition: none;
+    }
+    .services__card-8:hover{
+        transform: none;
+        transition: none;
+    }
+    .services__card-9:hover{
+        transform: none;
+        transition: none;
+    }
+    .services__card-10:hover{
+        transform: none;
+        transition: none;
+    }
+    .services__card-11:hover{
+        transform: none;
+        transition: none;
+    }
+    .services__card-12:hover{
+        transform: none;
+        transition: none;
+    }
+    .services__card-13:hover{
+        transform: none;
+        transition: none;
+    }
+    .services__card-14:hover{
+        transform: none;
+        transition: none;
+    }
+    .services__card-15:hover{
+        transform: none;
+        transition: none;
+    }
+    .services__card-16:hover{
+        transform: none;
+        transition: none;
+    }
+    .services__card-17:hover{
+        transform: none;
+        transition: none;
+    }
+
+    select {
+        width: 100%;
+        padding: 8px 20px;
+        border: 2px solid #5e72eb;
+        border-radius: 4px;
+        background-color: transparent;
+        color: aliceblue;
+        font-weight: bold;
+    }
+
+    select::placeholder {
+        color: gray;
+        font-weight: bold;
+    }
+
+    select:focus {
+        color: #5e72eb;
+    }
+
+    input[type=text] {
+        width: 100%;
+        font-family: inherit;
+        border: 0;
+        border-bottom: 2px solid white;
+        outline: 0;
+        color: white;
+        padding: 7px 0;
+        background: transparent;
+        font-size: .9rem;
+        transition: border-color 0.2s;
+        font-weight: bold;
+    }
+    
+
+    input[type=text]::placeholder {
+        color:gray;
+    }
+
+    input[type=text]:focus {
+        border-bottom: 2px solid #5e72eb;
+    }
+
+    input[type=text]:hover {
+        border: none;
+        border-bottom: 2px solid #5e72eb;
+    }
+
+    input[type=submit] {
+        position: relative;
+        border-radius: 5px;
+        top: 20px;
+        background-color: #5e72eb;
+        color:white;
+        border: none;
+        width: 100%;
+        padding: 16px 32px;
+        font-weight: bold;
+    }
+
+    input[type=submit]:hover {
+        background-color: #120c6e;
+    }
+
 
 .navbar{
     background: #131313;
