@@ -229,9 +229,16 @@
     }
 
     .services__card p {
+        position: absolute;
+        top: 400px;
+        left: 30px;
+    }
+
+    .services__card h3 {
         position: relative; 
-        color:#5e72eb;
+        color:white;
         font-weight: bold;
+        font-size: 16px;
     }
 
     .services__card:hover {
