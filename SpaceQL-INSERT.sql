@@ -53,14 +53,26 @@ INSERT INTO Galaxies VALUES ('001','Milky Way', '105,700');
 INSERT INTO Galaxies VALUES ('002', 'Andromeda', '220,000');
 INSERT INTO Galaxies VALUES ('003', 'Pinwheel Galaxy', '170,000');
 
-
+-- unit for solar system diameter is astronimical unit
 INSERT INTO SolarSystemInGalaxy VALUES ('01','001','Our System', '79');
 INSERT INTO SolarSystemInGalaxy VALUES ('02', '001', 'Proxima System', '1.489');
 INSERT into SolarSystemInGalaxy VALUES ('03', '001', 'Gliese 876 System', '0.72');
 
+-- unit for periods is days
+-- earth
 INSERT INTO Moons VALUES ('The Moon', '0000', '3475', '29.530589', '29.530589', '384400', '1000');
+-- mars 
+INSERT INTO Moons VALUES ('Phobos', '0004', '23', '0.31891023', '0.31891023', '9375', '2138');
+INSERT INTO Moons VALUES ('Deimos', '0004', '12', '1.263', '1.263', '23460', '1351');
+-- jupiter
+INSERT INTO Moons VALUES ('Ganymede', '0005', '5268', '7.15455296', '7.15455296', '1070400', '10880');
+INSERT INTO Moons VALUES ('Europa', '0005', '3122', '3.551181', '3.551181', '670900', '13743');
+-- saturn
 INSERT INTO Moons VALUES ('Titan', '0006', '5149', '15.945', '15.945', '1221850', '5570');
 INSERT INTO Moons VALUES ('Rhea', '0006', '1528', '4.518212', '4.518212', '527040', '8480');
+-- uranus
+INSERT INTO Moons VALUES ('Titania', '0016', '1577', '8.706234', '8.706234', '435910', '3640');
+INSERT INTO Moons VALUES ('Miranda', '0016', '472', '1.413479', '1.413479', '129390', '	6660');
 
 INSERT INTO Astronauts VALUES ('1101', 'Neil', 'Armstrong', '1930-08-05');
 INSERT INTO Astronauts VALUES ('1102', 'Buzz', 'Aldrin', '1930-01-20');
