@@ -174,11 +174,11 @@ INSERT INTO discoveredminorobjects VALUES ('3313','Borrelly','500','5','1904-12-
 INSERT INTO discoveredminorobjects VALUES ('3314','Wild 2','490','8','1978-04-12');
 INSERT INTO discoveredminorobjects VALUES ('3315','Mrkos','98','7','1957-07-29');
 
-INSERT INTO asteroids VALUES ('3301','false');
-INSERT INTO asteroids VALUES ('3302','false');
-INSERT INTO asteroids VALUES ('3303','true');
-INSERT INTO asteroids VALUES ('3304','false');
-INSERT INTO asteroids VALUES ('3305','false');
+INSERT INTO asteroids VALUES ('3301',FALSE);
+INSERT INTO asteroids VALUES ('3302',FALSE);
+INSERT INTO asteroids VALUES ('3303',TRUE);
+INSERT INTO asteroids VALUES ('3304',FALSE);
+INSERT INTO asteroids VALUES ('3305',FALSE);
 
 INSERT INTO meteors VALUES ('3306','Chondrite');
 INSERT INTO meteors VALUES ('3307','Achondrite');
@@ -186,11 +186,11 @@ INSERT INTO meteors VALUES ('3308','Chrondrite');
 INSERT INTO meteors VALUES ('3309','Iron');
 INSERT INTO meteors VALUES ('3310','Achondrite');
 
-INSERT INTO comets VALUES ('3311','true');
-INSERT INTO comets VALUES ('3312','true');
-INSERT INTO comets VALUES ('3313','false');
-INSERT INTO comets VALUES ('3314','false');
-INSERT INTO comets VALUES ('3315','false');
+INSERT INTO comets VALUES ('3311',TRUE);
+INSERT INTO comets VALUES ('3312',TRUE);
+INSERT INTO comets VALUES ('3313',FALSE);
+INSERT INTO comets VALUES ('3314',FALSE);
+INSERT INTO comets VALUES ('3315',FALSE);
 
 INSERT INTO hasa VALUES ('0000','0001','01');
 INSERT INTO hasa VALUES ('0002','0001','01');
