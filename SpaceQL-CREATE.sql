@@ -276,7 +276,7 @@ ON UPDATE CASCADE
 
 CREATE TABLE photosfromtelescope (
 filename char(30) PRIMARY KEY,
-filedata VARBINARY(10),
+filedata VARBINARY(100000),
 telescopeid integer,
 dateandtime datetime,
 FOREIGN KEY (telescopeid) REFERENCES
