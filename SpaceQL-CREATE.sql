@@ -1,282 +1,286 @@
-CREATE TABLE SpaceAgencies (
-SpaceAgencyID integer PRIMARY KEY,
-Country char(20),
-DateFounded date,
-Name char(20),
-President char(20)
+CREATE TABLE spaceagencies (
+spaceagencyid integer PRIMARY KEY,
+country char(20),
+datefounded date,
+name char(20),
+president char(20)
 );
 
-CREATE TABLE DiscoveredLargeObjects (
-	LargeObjID integer,
-	Name char(20),
-	Diameter integer,
-	Mass char(20),
-	DiscoverSpaceAgencyID integer,
-	DiscoverDate date,
-	PRIMARY KEY (LargeObjID),
-	FOREIGN KEY (DiscoverSpaceAgencyID) REFERENCES
-	SpaceAgencies(SpaceAgencyID)
+CREATE TABLE discoveredlargeobjects (
+	largeobjid integer,
+	name char(20),
+	diameter integer,
+	mass char(20),
+	discoverspaceagencyid integer,
+	discoverdate date,
+	PRIMARY KEY (largeobjid),
+	FOREIGN KEY (discoverspaceagencyid) REFERENCES
+	spaceagencies(spaceagencyid)
 		ON DELETE SET NULL
 		ON UPDATE CASCADE
 );
 
-CREATE TABLE Planets ( 
-    PlanetID integer,
-	OrbitalPeriod float,
-	RotationalPeriod float,
-	PRIMARY KEY (PlanetID),
-	FOREIGN KEY (PlanetID) REFERENCES
-	DiscoveredLargeObjects(LargeObjID)
+CREATE TABLE planets ( 
+    planetid integer,
+	orbitalperiod float,
+	rotationalperiod float,
+	PRIMARY KEY (planetid),
+	FOREIGN KEY (planetid) REFERENCES
+	discoveredlargeobjects(largeobjid)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
 );
 
 
-CREATE TABLE Stars (
-	StarID Integer,
-	Composition char(20),
-	PRIMARY KEY (StarID),
-	FOREIGN KEY (StarID) REFERENCES
-	DiscoveredLargeObjects(LargeObjID)
+CREATE TABLE stars (
+	starid Integer,
+	composition char(20),
+	PRIMARY KEY (starid),
+	FOREIGN KEY (starid) REFERENCES
+	discoveredlargeobjects(largeobjid)
 		ON DELETE CASCADE
     	ON UPDATE CASCADE
 );
 
-CREATE TABLE Galaxies (
-	GalxID integer PRIMARY KEY,
-	Name char(20),
-	Diameter integer
+CREATE TABLE galaxies (
+	galxid integer PRIMARY KEY,
+	name char(20),
+	diameter integer
 );
 
-CREATE TABLE SolarSystemInGalaxy (
-	SolarSysID integer,
-	GalxID integer NOT NULL,
-	Name char(20),
-	Diameter integer,
-	PRIMARY KEY (SolarSysID),
-	FOREIGN KEY (GalxID) REFERENCES Galaxies(GalxID)
+CREATE TABLE solarsystemingalaxy (
+	solarsysid integer,
+	galxid integer NOT NULL,
+	name char(20),
+	diameter integer,
+	PRIMARY KEY (solarsysid),
+	FOREIGN KEY (galxid) REFERENCES galaxies(galxid)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
 );
 
 
-CREATE TABLE Moons (
-	Name char(20),
-	PlanetID integer,
-	Diameter integer,
-	RotationalPeriod float,
-	OrbitalPeriod float,
-	OrbitDistance integer,
-	OrbitSpeed integer,
-	PRIMARY KEY (Name, PlanetID),
-	FOREIGN KEY (PlanetID) REFERENCES Planets(PlanetID)
+CREATE TABLE moons (
+	name char(20),
+	planetid integer,
+	diameter integer,
+	rotationalperiod float,
+	orbitalperiod float,
+	orbitdistance integer,
+	orbitspeed integer,
+	PRIMARY KEY (name, planetid),
+	FOREIGN KEY (planetid) REFERENCES planets(planetid)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
 );
 
 
-CREATE TABLE Astronauts (
-AstroID integer PRIMARY KEY,
-Fname char(20),
-Lname char(20),
-DOB date
+CREATE TABLE astronauts (
+astroid integer PRIMARY KEY,
+fname char(20),
+lname char(20),
+dob date
 );
 
-CREATE TABLE TechnologyLocatedAt (
-TechID integer,
-Name char(20),
-dateCreated date,
-Operational boolean,
-LargeObjID integer,
-OrbitDistance integer,
-OrbitSpeed integer,
-arrivalDate date,
-PRIMARY KEY(TechID, LargeObjID),
-FOREIGN KEY (LargeObjID) REFERENCES
-DiscoveredLargeObjects(LargeObjID)
+CREATE TABLE technologylocatedat (
+techid integer,
+name char(20),
+datecreated date,
+operational boolean,
+largeobjid integer,
+orbitdistance integer,
+orbitspeed integer,
+arrivaldate date,
+PRIMARY KEY(techid, largeobjid),
+FOREIGN KEY (largeobjid) REFERENCES
+discoveredlargeobjects(largeobjid)
 ON DELETE CASCADE
 ON UPDATE CASCADE
 );
 
-CREATE TABLE Satellites (
-SatID integer PRIMARY KEY,
-Type char(20),
-FOREIGN KEY (SatID) REFERENCES TechnologyLocatedAt(TechID)
+CREATE TABLE satellites (
+satid integer PRIMARY KEY,
+type char(20),
+FOREIGN KEY (satid) REFERENCES technologylocatedat(techid)
 ON DELETE CASCADE
 ON UPDATE CASCADE
 );
 
-CREATE TABLE Telescopes (
-TelID integer PRIMARY KEY,
-FOREIGN KEY (TelID) REFERENCES TechnologyLocatedAt(TechID)
+CREATE TABLE telescopes (
+telid integer PRIMARY KEY,
+FOREIGN KEY (telid) REFERENCES technologylocatedat(techid)
 ON DELETE CASCADE
 ON UPDATE CASCADE
 );
 
-CREATE TABLE Rovers (
-RovID integer PRIMARY KEY,
-FOREIGN KEY (RovID) REFERENCES TechnologyLocatedAt(TechID)
+CREATE TABLE rovers (
+rovid integer PRIMARY KEY,
+FOREIGN KEY (rovid) REFERENCES technologylocatedat(techid)
 ON DELETE CASCADE
 ON UPDATE CASCADE
 );
 
-CREATE TABLE SpaceStations (
-SpaceStationID integer PRIMARY KEY,
-FOREIGN KEY (SpaceStationID) REFERENCES
-TechnologyLocatedAt(TechID)
+CREATE TABLE spacestations (
+spacestationid integer PRIMARY KEY,
+FOREIGN KEY (spacestationid) REFERENCES
+technologylocatedat(techid)
 ON DELETE CASCADE
 ON UPDATE CASCADE
 );
 
-CREATE TABLE DiscoveredMinorObjects (
-MinObjID integer PRIMARY KEY,
-Name char(20),
-Diameter integer,
-DiscoverySpaceAgencyID integer,
-DiscoveryDate date,
-FOREIGN KEY (DiscoverySpaceAgencyID) REFERENCES
-SpaceAgencies(SpaceAgencyID)
+CREATE TABLE discoveredminorobjects (
+minobjid integer PRIMARY KEY,
+name char(20),
+diameter integer,
+discoveryspaceagencyid integer,
+discoverydate date,
+FOREIGN KEY (discoveryspaceagencyid) REFERENCES
+spaceagencies(spaceagencyid)
 ON DELETE SET NULL
 ON UPDATE CASCADE
 );
 
-CREATE TABLE Asteroids (
-AstroidID integer,
-extinctionThreat boolean,
-PRIMARY KEY (AstroidID),
-FOREIGN KEY (AstroidID) REFERENCES
-DiscoveredMinorObjects(MinObjID)
+CREATE TABLE asteroids (
+astroidid integer,
+extinctionthreat boolean,
+PRIMARY KEY (astroidid),
+FOREIGN KEY (astroidid) REFERENCES
+discoveredminorobjects(minobjid)
 ON DELETE CASCADE
 ON UPDATE CASCADE
 );
 
-CREATE TABLE Meteors (
-MeteorID integer PRIMARY KEY,
-Type char(20),
-FOREIGN KEY (MeteorID) REFERENCES
-DiscoveredMinorObjects(MinObjID)
+CREATE TABLE meteors (
+meteroid integer PRIMARY KEY,
+type char(20),
+FOREIGN KEY (meteroid) REFERENCES
+discoveredminorobjects(minobjid)
 ON DELETE CASCADE
 ON UPDATE CASCADE
 );
 
-CREATE TABLE Comets (
-CometID integer PRIMARY KEY,
-VisibleFromEarth boolean,
-FOREIGN KEY (CometID) REFERENCES
-DiscoveredMinorObjects(MinObjID)
+CREATE TABLE comets (
+cometid integer PRIMARY KEY,
+visiblefromearth boolean,
+FOREIGN KEY (cometid) REFERENCES
+discoveredminorobjects(minobjid)
 ON DELETE CASCADE
 ON UPDATE CASCADE
 );
 
 
-CREATE TABLE Orbit (
-PlanetID integer,
-StarID integer,
-OrbitDist integer,
-OrbitSpd integer,
-PRIMARY KEY (PlanetID, StarID),
-FOREIGN KEY (PlanetID) REFERENCES Planets(PlanetID)
+CREATE TABLE orbit (
+planetid integer,
+starid integer,
+orbitdist integer,
+orbitspd integer,
+PRIMARY KEY (planetid, starid),
+FOREIGN KEY (planetid) REFERENCES planets(planetid)
 	ON DELETE CASCADE
 	ON UPDATE CASCADE,
-FOREIGN KEY (StarID) REFERENCES Stars(StarID)
+FOREIGN KEY (starid) REFERENCES stars(starid)
 	ON DELETE CASCADE
 	ON UPDATE CASCADE
 );
 
-CREATE TABLE HasA (
-PlanetID integer,
-StarID integer,
-SolarSysID integer,
-PRIMARY KEY (PlanetID, StarID, SolarSysID),
-FOREIGN KEY (PlanetID) REFERENCES Planets(PlanetID)
+CREATE TABLE hasa (
+planetid integer,
+starid integer,
+solarsysid integer,
+PRIMARY KEY (planetid, starid, solarsysid),
+FOREIGN KEY (planetid) REFERENCES planets(planetid)
 ON DELETE CASCADE
 ON UPDATE CASCADE,
-FOREIGN KEY (StarID) REFERENCES Stars(StarID)
+FOREIGN KEY (starid) REFERENCES stars(starid)
 ON DELETE CASCADE
 ON UPDATE CASCADE,
-FOREIGN KEY (SolarSysID) REFERENCES
-SolarSystemInGalaxy(SolarSysID)
+FOREIGN KEY (solarsysid) REFERENCES
+solarsystemingalaxy(solarsysid)
 ON DELETE CASCADE
 ON UPDATE CASCADE
 );
 
-CREATE TABLE WorkFor (
-AstroID integer,
-SpaceAgencyID integer,
-Date date,
-PRIMARY KEY (AstroID, SpaceAgencyID),
-FOREIGN KEY (AstroID) REFERENCES Astronauts(AstroID)
+CREATE TABLE workfor (
+astroid integer,
+spaceagencyid integer,
+date date,
+PRIMARY KEY (astroid, spaceagencyid),
+FOREIGN KEY (astroid) REFERENCES astronauts(astroid)
 ON DELETE CASCADE
 ON UPDATE CASCADE,
-FOREIGN KEY (SpaceAgencyID) REFERENCES
-SpaceAgencies(SpaceAgencyID)
+FOREIGN KEY (spaceagencyid) REFERENCES
+spaceagencies(spaceagencyid)
 ON DELETE CASCADE
 ON UPDATE CASCADE
 );
 
-CREATE TABLE AstronautVisitedMoon (
-AstroID integer,
-MoonName char(20),
-Date date,
-PRIMARY KEY (AstroID, MoonName),
-FOREIGN KEY (AstroID) REFERENCES Astronauts(AstroID)
+CREATE TABLE astronautvisitedmoon (
+astroid integer,
+moonname char(20),
+planetid integer,
+date date,
+PRIMARY KEY (astroid, moonname, planetid),
+FOREIGN KEY (astroid) REFERENCES astronauts(astroid)
 ON DELETE CASCADE
 ON UPDATE CASCADE,
-FOREIGN KEY (MoonName) REFERENCES Moons(Name)
+FOREIGN KEY (moonname) REFERENCES moons(name)
+ON DELETE CASCADE
+ON UPDATE CASCADE
+FOREIGN KEY (planetid) REFERENCES planets(planetid)
 ON DELETE CASCADE
 ON UPDATE CASCADE
 );
 
-CREATE TABLE AstronautVisitedPlanet (
-AstroID integer,
-PlanetID integer,
-Date date,
-PRIMARY KEY (AstroID, PlanetID),
-FOREIGN KEY (PlanetID) REFERENCES Planets(PlanetID)
+CREATE TABLE astronautvisitedplanet (
+astroid integer,
+planetid integer,
+date date,
+PRIMARY KEY (astroid, planetid),
+FOREIGN KEY (planetid) REFERENCES planets(planetid)
 ON DELETE CASCADE
 ON UPDATE CASCADE,
-FOREIGN KEY (AstroID) REFERENCES Astronauts(AstroID)
+FOREIGN KEY (astroid) REFERENCES astronauts(astroid)
 ON DELETE CASCADE
 ON UPDATE CASCADE
 );
 
-CREATE TABLE Stationed (
-AstroID integer,
-SpaceStationID integer,
-startDate date,
-endDate date,
-PRIMARY KEY (AstroID, SpaceStationID),
-FOREIGN KEY (AstroID) REFERENCES Astronauts(AstroID)
+CREATE TABLE stationed (
+astroid integer,
+spacestationid integer,
+startdate date,
+enddate date,
+PRIMARY KEY (astroid, spacestationid),
+FOREIGN KEY (astroid) REFERENCES astronauts(astroid)
 ON DELETE CASCADE
 ON UPDATE CASCADE,
-FOREIGN KEY (SpaceStationID) REFERENCES
-SpaceStations(SpaceStationID)
+FOREIGN KEY (spacestationid) REFERENCES
+spacestations(spacestationid)
 ON DELETE CASCADE
 ON UPDATE CASCADE
 );
 
-CREATE TABLE Own (
-SpaceAgencyID integer,
-TechID integer,
-PRIMARY KEY(SpaceAgencyID, TechID),
-FOREIGN KEY (SpaceAgencyID) REFERENCES
-SpaceAgencies(SpaceAgencyID)
+CREATE TABLE own (
+spaceagencyid integer,
+techid integer,
+PRIMARY KEY(spaceagencyid, techid),
+FOREIGN KEY (spaceagencyid) REFERENCES
+spaceagencies(spaceagencyid)
 ON DELETE CASCADE
 ON UPDATE CASCADE,
-FOREIGN KEY (TechID) REFERENCES
-TechnologyLocatedAt(TechID)
+FOREIGN KEY (techid) REFERENCES
+technologylocatedat(techid)
 ON DELETE CASCADE
 ON UPDATE CASCADE
 );
 
 
-CREATE TABLE PhotosFromTelescope (
+CREATE TABLE photosfromtelescope (
 filename char(30) PRIMARY KEY,
 filedata VARBINARY(10),
-telescopeID integer,
-dateAndTime datetime,
-FOREIGN KEY (TelescopeID) REFERENCES
-Telescopes(TelID)
+telescopeid integer,
+dateandtime datetime,
+FOREIGN KEY (telescopeid) REFERENCES
+telescopes(telid)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 );
