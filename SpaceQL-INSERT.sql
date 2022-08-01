@@ -155,3 +155,39 @@ INSERT INTO spacestations VALUES ('2217');
 INSERT INTO spacestations VALUES ('2218');
 INSERT INTO spacestations VALUES ('2219');
 INSERT INTO spacestations VALUES ('2220');
+
+INSERT INTO discoveredminorobjects VALUES ('3301','511 Davida', '298','1','1903-05-30');
+INSERT INTO discoveredminorobjects VALUES ('3302','87 Sylvia', '274','3','1866-05-16');
+INSERT INTO discoveredminorobjects VALUES ('3303','1950 DA','2','1','1950-02-23'); 
+INSERT INTO discoveredminorobjects VALUES ('3304','2 Pallas','511','9','1802-03-28');
+INSERT INTO discoveredminorobjects VALUES ('3305','88 Thisbe','218','7','1866-06-15');
+
+INSERT INTO discoveredminorobjects VALUES ('3306','Aarhus','1','7','1951-10-02');
+INSERT INTO discoveredminorobjects VALUES ('3307','Pavlovka','20','9','1882-08-02');
+INSERT INTO discoveredminorobjects VALUES ('3308','Sutters Mill','3','1','2012-04-24');
+INSERT INTO discoveredminorobjects VALUES ('3309','Hoba','70','1','1920-05-05');
+INSERT INTO discoveredminorobjects VALUES ('3310','Millbillillie','13','8','1970-11-24');
+
+INSERT INTO discoveredminorobjects VALUES ('3311','Hale-Bopp','75','6','1995-07-23');
+INSERT INTO discoveredminorobjects VALUES ('3312','Halley','1100','1','1758-04-03');
+INSERT INTO discoveredminorobjects VALUES ('3313','Borrelly','500','5','1904-12-28');
+INSERT INTO discoveredminorobjects VALUES ('3314','Wild 2','490','8','1978-04-12');
+INSERT INTO discoveredminorobjects VALUES ('3315','Mrkos','98','7','1957-07-29');
+
+INSERT INTO asteroids VALUES ('3301','false');
+INSERT INTO asteroids VALUES ('3302','false');
+INSERT INTO asteroids VALUES ('3303','true');
+INSERT INTO asteroids VALUES ('3304','false');
+INSERT INTO asteroids VALUES ('3305','false');
+
+INSERT INTO meteors VALUES ('3306','Chondrite');
+INSERT INTO meteors VALUES ('3307','Achondrite');
+INSERT INTO meteors VALUES ('3308','Chrondrite');
+INSERT INTO meteors VALUES ('3309','Iron');
+INSERT INTO meteors VALUES ('3310','Achondrite');
+
+INSERT INTO comets VALUES ('3311','true');
+INSERT INTO comets VALUES ('3312','true');
+INSERT INTO comets VALUES ('3313','false');
+INSERT INTO comets VALUES ('3314','false');
+INSERT INTO comets VALUES ('3315','false');
