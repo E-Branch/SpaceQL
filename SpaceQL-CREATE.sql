@@ -52,7 +52,7 @@ CREATE TABLE solarsystemingalaxy (
 	solarsysid integer,
 	galxid integer NOT NULL,
 	name char(20),
-	diameter integer,
+	diameter float,
 	PRIMARY KEY (solarsysid),
 	FOREIGN KEY (galxid) REFERENCES galaxies(galxid)
 		ON DELETE CASCADE
