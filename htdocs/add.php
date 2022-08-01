@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css?v=1">
 </head>
 
 
@@ -41,7 +41,7 @@
                 <input name="discoverdate" type="text" placeholder="Discover Date YYYY-MM-DD">
                 <input name="orbitalperiod" type="text" placeholder="Orbital Period (float)">
                 <input name="rotationalperiod" type="text" placeholder="Rotational Period (float)">
-                <p>Select the space agency that made the discovery:<p>
+                <h3>Select the space agency that made the discovery:<h3>
                 <?php
                     $result = $conn->query("select spaceagencyid, name from spaceagencies");
                     echo "<select name='spaceagencyid'>";
@@ -52,6 +52,7 @@
                         echo '<option value="'.$spaceagencyid.'">'.$name.'</option>';
                     }
                     echo '<option value="NULL">NULL</option>';
+                    echo "</select>"
                 ?>
                 <input type="submit" value="Insert">
                 <h2>Add planet</h2>
@@ -65,7 +66,7 @@
                 <input name="mass" type="text" placeholder="Mass">
                 <input name="discoverdate" type="text" placeholder="Discover Date YYYY-MM-DD">
                 <input name="composition" type="text" placeholder="Composition">
-                <p>Agency that made the discovery:<p>
+                <h3>Agency that made the discovery:<h3>
                 <?php
                     $result = $conn->query("select spaceAgencyid, name from spaceagencies");
                     echo "<select name='spaceagencyid'>";
@@ -75,6 +76,8 @@
                         $name = $row['name'];
                         echo '<option value="'.$spaceagencyid.'">'.$name.'</option>';
                     }
+                    echo "</select>";
+
                 ?>
                 <input type="submit" value="Insert">
                 <h2>Add star</h2>
@@ -102,7 +105,7 @@
             <form action="process-addsolarsystem.php" method="post" class="services__card services__card-8">
                 <input name="name" type="text" placeholder="Name">
                 <input name="diameter" type="text" placeholder="Diameter (integer)">
-                <p>Select the galaxy the solar system is in</p>
+                <h3>Select the galaxy the solar system is in</h3>
                 <?php
                     $result = $conn->query("select galxid, name from galaxies");
                     echo "<select name='galxid'>";
@@ -112,9 +115,10 @@
                         $name = $row['name'];
                         echo '<option value="'.$galxid.'">'.$name.'</option>';
                     }
+                    echo "</select>";
                 ?>
                 <input type="submit" value="Insert">
-                <h2>Add a galaxy</h2>
+                <h2>Add a solar system</h2>
             </form>
 
             <!-- MOON -->
@@ -125,7 +129,7 @@
                 <input name="rotationalperiod" type="text" placeholder="Rotational Period (float)">
                 <input name="orbitaldistance" type="text" placeholder="Orbital Distance (integer)">
                 <input name="orbitalspeed" type="text" placeholder="Orbital Speed (integer)">
-                <p>Select the planet:</p>
+                <h3>Select the planet:</h3>
                 <?php
                     $result = $conn->query("select planetid from planets");
                     echo "<select name='planetid'>";
@@ -140,6 +144,7 @@
                         $name = $row2['name'];
                         echo '<option value="'.$planetid.'">'.$name.'</option>';
                     }
+                    echo "</select>";
                 ?>
                 <input type="submit" value="Insert">
                 <h2>Add a moon</h2>
@@ -159,7 +164,7 @@
             <form action="process-addsatellite.php" method="post" class="services__card services__card-11">
                 <input name="name" type="text" placeholder="Name">
                 <input name="datecreated" type="text" placeholder="Date Created YYYY-MM-DD">
-                <p>Is this technology operational?</p>
+                <h3>Is this technology operational?</h3>
                 <select name="operational">
                     <option value="true">Yes</option>
                     <option value="false">No</option>
@@ -170,7 +175,7 @@
                 <input name="arrivaldate" type="text" placeholder="Arrival Date YYYY-MM-DD">
                 <input name="type" type="text" placeholder="Type of Sattelite">
 
-                <p>Select where this is located:</p>
+                <h3>Select where this is located:</h3>
                 <?php
                     $result = $conn->query("select largeobjid, name from discoveredlargeobjects");
                     echo "<select name='largeobjid'>";
@@ -179,6 +184,8 @@
                         $name = $row['name'];
                         echo '<option value="'.$largeobjid.'">'.$name.'</option>';
                     }
+                    echo "</select>";
+
                 ?>
                 <input type="submit" value="Insert">
                 <h2>Add a sattelite</h2>
@@ -189,7 +196,7 @@
             <form action="process-addtelescope.php" method="post" class="services__card services__card-12">
                 <input name="name" type="text" placeholder="Name">
                 <input name="datecreated" type="text" placeholder="Date Created YYYY-MM-DD">
-                <p>Is this technology operational?</p>
+                <h3>Is this technology operational?</h3>
                 <select name="operational">
                     <option value="true">Yes</option>
                     <option value="false">No</option>
@@ -199,7 +206,7 @@
                 <input name="orbitalspeed" type="text" placeholder="Orbital Speed (integer)">
                 <input name="arrivaldate" type="text" placeholder="Arrival Date YYYY-MM-DD">
 
-                <p>Select which object this technology is located at:</p>
+                <h3>Select which object this technology is located at:</h3>
                 <?php
                     $result = $conn->query("select largeobjid, name from discoveredlargeobjects");
                     echo "<select name='largeobjid'>";
@@ -208,6 +215,8 @@
                         $name = $row['name'];
                         echo '<option value="'.$largeobjid.'">'.$name.'</option>';
                     }
+                    echo "</select>";
+
                 ?>
                 <input type="submit" value="Insert">
                 <h2>Add a telescope</h2>
@@ -218,7 +227,7 @@
             <form action="process-addrover.php" method="post" class="services__card services__card-13">
                 <input name="name" type="text" placeholder="Name">
                 <input name="datecreated" type="text" placeholder="Date Created YYYY-MM-DD">
-                <p>Is this technology operational?</p>
+                <h3>Is this technology operational?</h3>
                 <select name="operational">
                     <option value="true">Yes</option>
                     <option value="false">No</option>
@@ -228,7 +237,7 @@
                 <input name="orbitalspeed" type="text" placeholder="Orbital Speed (integer)">
                 <input name="arrivaldate" type="text" placeholder="Arrival Date YYYY-MM-DD">
 
-                <p>Select which object this technology is located at:</p>
+                <h3>Select which object this technology is located at:</h3>
                 <?php
                     $result = $conn->query("select largeobjid, name from discoveredlargeobjects");
                     echo "<select name='largeobjid'>";
@@ -237,6 +246,8 @@
                         $name = $row['name'];
                         echo '<option value="'.$largeobjid.'">'.$name.'</option>';
                     }
+                    echo "</select>";
+
                 ?>
                 <input type="submit" value="Insert">
                 <h2>Add a rover</h2>
@@ -247,7 +258,7 @@
              <form action="process-addspacestation.php" method="post" class="services__card services__card-14">
                 <input name="name" type="text" placeholder="Name">
                 <input name="datecreated" type="text" placeholder="Date Created YYYY-MM-DD">
-                <p>Is this technology operational?</p>
+                <h3>Is this technology operational?</h3>
                 <select name="operational">
                     <option value="true">Yes</option>
                     <option value="false">No</option>
@@ -257,7 +268,7 @@
                 <input name="orbitalspeed" type="text" placeholder="Orbital Speed (integer)">
                 <input name="arrivaldate" type="text" placeholder="Arrival Date YYYY-MM-DD">
 
-                <p>Select which object this technology is located at:</p>
+                <h3>Select which object this technology is located at:</h3>
                 <?php
                     $result = $conn->query("select largeobjid, name from discoveredlargeobjects");
                     echo "<select name='largeobjid'>";
@@ -266,6 +277,8 @@
                         $name = $row['name'];
                         echo '<option value="'.$largeobjid.'">'.$name.'</option>';
                     }
+                    echo "</select>";
+
                 ?>
                 <input type="submit" value="Insert">
                 <h2>Add a space station</h2>
@@ -276,13 +289,13 @@
                 <input name="name" type="text" placeholder="Name">
                 <input name="diameter" type="text" placeholder="Diameter (integer)">
                 <input name="discoverydate" type="text" placeholder="Discovery Date YYYY-MM-DD">
-                <p>Extinction threat?</p>
+                <h3>Extinction threat?</h3>
                 <select name="extinctionthreat">
                     <option value="true">Yes</option>
                     <option value="false">No</option>
                 </select>
                 </br>
-                <p>Agency that made the discovery:</p>
+                <h3>Agency that made the discovery:</h3>
                 <?php
                     $result = $conn->query("select spaceagencyid, name from spaceagencies");
                     echo "<select name='spaceagencyid'>";
@@ -291,6 +304,8 @@
                         $name = $row['name'];
                         echo '<option value="'.$spaceagencyid.'">'.$name.'</option>';
                     }
+                    echo "</select>";
+
                 ?>
 
                 <input type="submit" value="Insert">
@@ -305,7 +320,7 @@
                 <input name="discoverydate" type="text" placeholder="Discovery Date YYYY-MM-DD">
                 <input name="type" type="text" placeholder="Type">
 
-                <p>Agency that made the discovery:</p>
+                <h3>Agency that made the discovery:</h3>
                 <?php
                     $result = $conn->query("select spaceagencyid, name from spaceagencies");
                     echo "<select name='spaceagencyid'>";
@@ -314,6 +329,8 @@
                         $name = $row['name'];
                         echo '<option value="'.$spaceagencyid.'">'.$name.'</option>';
                     }
+                    echo "</select>";
+
                 ?>
 
                 <input type="submit" value="Insert">
@@ -325,13 +342,13 @@
                 <input name="name" type="text" placeholder="Name">
                 <input name="diameter" type="text" placeholder="Diameter (integer)">
                 <input name="discoverydate" type="text" placeholder="Discovery Date YYYY-MM-DD">
-                <p>Visible from Earth?</p>
+                <h3>Visible from Earth?</h3>
                 <select name="visiblefromearth">
                     <option value="true">Yes</option>
                     <option value="false">No</option>
                 </select>
                 </br>
-                <p>Agency that made the discovery:</p>
+                <h3>Agency that made the discovery:</h3>
                 <?php
                     $result = $conn->query("select spaceagencyid, name from spaceagencies");
                     echo "<select name='spaceagencyid'>";
@@ -340,6 +357,8 @@
                         $name = $row['name'];
                         echo '<option value="'.$spaceagencyid.'">'.$name.'</option>';
                     }
+                    echo "</select>";
+
                 ?>
 
                 <input type="submit" value="Insert">

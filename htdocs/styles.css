@@ -43,6 +43,7 @@
         max-width: 1300px;
         padding: 0 50px;
     }
+
     
     .main__content h1{
         font-size: 4rem;
@@ -64,6 +65,35 @@
         -webkit-text-fill-color: transparent;
         -moz-text-fill-color: transparent;
         text-align: center;
+    }
+
+    .main__content h3 {
+        font-size: 1rem;
+        background-color:#ffff ;
+        background-size: 100%;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        text-align:left;
+    }
+
+    .main__content p {
+        margin-top: 1rem;
+        font-size: 2rem;
+        font-weight: 700;
+        background-color: white;    
+    }
+
+    .main__content h4 {
+        font-size: 2rem;
+        background-color:#ffff ;
+        background-size: 100%;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        text-align:left;
     }
 
     .services {
@@ -415,5 +445,27 @@
 
 .button:hover{
     background: #120c6e;
+    transition: all 0.3s ease;
+}
+
+.card-button {
+    display:flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    top: 100px;
+    height: 50px;
+    width: px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: linear-gradient(to top, #120c6e 0%, #120c6e 100% );;
+    color: white;
+    font-weight: bold;
+}
+
+.card-button:hover{
+    background: #0b0742;
     transition: all 0.3s ease;
 }
