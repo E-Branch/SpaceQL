@@ -20,7 +20,7 @@ INSERT INTO DiscoveredLargeObjects VALUES ('0007', 'Neptune', '49244', '1.024 * 
 INSERT INTO DiscoveredLargeObjects VALUES ('0008', 'Pluto', '2376', '1.309 * 10^22', NULL, NULL);
 INSERT INTO DiscoveredLargeObjects VALUES ('0009', 'Sirius', '2400000', '4.103 * 10^30', NULL, NULL);
 INSERT INTO DiscoveredLargeObjects VALUES ('0010', '14 Andromedae b', '160793', '9.110 * 10^27', '1', '2008-07-02');
-INSERT INTO DiscoveredLargeObjects VALUES ('0011', 'Gliese 876', '500,900', '6.643 * 10^29', NULL, NULL);
+INSERT INTO DiscoveredLargeObjects VALUES ('0011', 'Gliese 876', '500900', '6.643 * 10^29', NULL, NULL);
 INSERT INTO DiscoveredLargeObjects VALUES ('0012', 'Gliese 876 b', '166388', '2.2756 Jupiters', '1', '1998-06-22');
 INSERT INTO DiscoveredLargeObjects VALUES ('0013', 'Gliese 876 c', '174778', '0.7142 Jupiters', '1', '2001-01-09');
 INSERT INTO DiscoveredLargeObjects VALUES ('0014', 'Gliese 876 d','31320','6.83 Earths', '1','2005-06-13');
@@ -108,29 +108,29 @@ INSERT INTO Orbit VALUES ('0007','0001','30.0','5.43');
 INSERT INTO Orbit VALUES ('0016','0001','19.2','6.80');
 
 
-INSERT INTO TechnologyLocatedAt VALUES ('2201', 'Anik F1', '2000-01-01','true','0000','35900','11300','2006-11-21'); --Canada
-INSERT INTO TechnologyLocatedAt VALUES ('2202','SCISAT','2003-06-12','true','0000','650','27360','2003-08-12'); --Canada
-INSERT INTO TechnologyLocatedAt VALUES ('2203','ALOS-2','2014-02-09','true','0000','638','27360','2014-05-24'); --japan
-INSERT INTO TechnologyLocatedAt VALUES ('2204','ACRIMSAT','1999-05-12','false','0000','720','27200','1999-12-20'); --nasa
-INSERT INTO TechnologyLocatedAt VALUES ('2205','MAVEN','2013-11-18','true','0004','4500','12466','2014-09-21'); --nasa
+INSERT INTO TechnologyLocatedAt VALUES ('2201', 'Anik F1', '2000-01-01','1','0000','35900','11300','2006-11-21'); -- Canada
+INSERT INTO TechnologyLocatedAt VALUES ('2202','SCISAT','2003-06-12','1','0000','650','27360','2003-08-12'); -- Canada
+INSERT INTO TechnologyLocatedAt VALUES ('2203','ALOS-2','2014-02-09','1','0000','638','27360','2014-05-24'); -- japan
+INSERT INTO TechnologyLocatedAt VALUES ('2204','ACRIMSAT','1999-05-12','0','0000','720','27200','1999-12-20'); -- nasa
+INSERT INTO TechnologyLocatedAt VALUES ('2205','MAVEN','2013-11-18','1','0004','4500','12466','2014-09-21'); -- nasa
 
-INSERT INTO TechnologyLocatedAt VALUES ('2206','Hubble','1985-04-14','true','0000','540','27300','1990-04-24');--nasa
-INSERT INTO TechnologyLocatedAt VALUES ('2207','James Webb','2021-12-25','true','0001','151500000','2798','2022-01-24');--nasa
-INSERT INTO TechnologyLocatedAt VALUES ('2208','HETE-2','2000-01-15','false','0000','650','27200','2000-10-09'); --nasa
-INSERT INTO TechnologyLocatedAt VALUES ('2209','Chandra X-ray','1998-12-15','true','0000','6129','1999-07-23');--nasa
-INSERT INTO TechnologyLocatedAt VALUES ('2210','Spitzer','2003-08-25','false','0001','150000000','1707','2003-12-18');--nasa
+INSERT INTO TechnologyLocatedAt VALUES ('2206','Hubble','1985-04-14','1','0000','540','27300','1990-04-24'); -- nasa
+INSERT INTO TechnologyLocatedAt VALUES ('2207','James Webb','2021-12-25','1','0001','151500000','2798','2022-01-24');-- nasa
+INSERT INTO TechnologyLocatedAt VALUES ('2208','HETE-2','2000-01-15','0','0000','650','27200','2000-10-09'); -- nasa
+INSERT INTO TechnologyLocatedAt VALUES ('2209','Chandra X-ray','1998-12-15','1','0000',NULL,'6129','1999-07-23'); -- nasa
+INSERT INTO TechnologyLocatedAt VALUES ('2210','Spitzer','2003-08-25','0','0001','150000000','1707','2003-12-18'); -- nasa
 
-INSERT INTO TechnologyLocatedAt VALUES ('2211','Sojourner','1996-12-14','false','0004',NULL,NULL,'1997-07-04');--nasa
-INSERT INTO TechnologyLocatedAt VALUES ('2212','Spirit','2003-06-10','false','0004',NULL,NULL,'2004-01-04');--nasa
-INSERT INTO TechnologyLocatedAt VALUES ('2213','Zhurong','2020-07-23','true','0004',NULL,NULL,'2021-05-22');--cnsa china
-INSERT INTO TechnologyLocatedAt VALUES ('2214','Curiosity','2011-11-26','true','0004',NULL,NULL,'2012-08-06');--nasa
-INSERT INTO TechnologyLocatedAt VALUES ('2215','Perseverance','2020-07-30','true','0004',NULL,null,'2021-02-18');--nasa
+INSERT INTO TechnologyLocatedAt VALUES ('2211','Sojourner','1996-12-14','0','0004',NULL,NULL,'1997-07-04'); -- nasa
+INSERT INTO TechnologyLocatedAt VALUES ('2212','Spirit','2003-06-10','0','0004',NULL,NULL,'2004-01-04'); -- nasa
+INSERT INTO TechnologyLocatedAt VALUES ('2213','Zhurong','2020-07-23','1','0004',NULL,NULL,'2021-05-22'); -- cnsa china
+INSERT INTO TechnologyLocatedAt VALUES ('2214','Curiosity','2011-11-26','1','0004',NULL,NULL,'2012-08-06'); -- nasa
+INSERT INTO TechnologyLocatedAt VALUES ('2215','Perseverance','2020-07-30','1','0004',NULL,null,'2021-02-18'); -- nasa
 
-INSERT INTO TechnologyLocatedAt VALUES ('2216','Mir','1986-02-16','false','0000','374','27700','1986-02-20');--roscosmos
-INSERT INTO TechnologyLocatedAt VALUES ('2217','ISS','1998-11-01','true','0000','422','27600','1998-11-20');--nasa,roscosmos,csa,jaxa
-INSERT INTO TechnologyLocatedAt VALUES ('2218','SKylab','1973-05-02','false','0000','274','27900','1973-05-14');--nasa
-INSERT INTO TechnologyLocatedAt VALUES ('2219','Tiangong','2021-04-27','true','0000','384','27700','2021-04-29');--cmsa
-INSERT INTO TechnologyLocatedAt VALUES ('2220','Tiangong-1','2016-08-31','false','0000','378','27680','2016-09-15');--cmsa
+INSERT INTO TechnologyLocatedAt VALUES ('2216','Mir','1986-02-16','0','0000','374','27700','1986-02-20'); -- roscosmos
+INSERT INTO TechnologyLocatedAt VALUES ('2217','ISS','1998-11-01','1','0000','422','27600','1998-11-20'); -- nasa,roscosmos,csa,jaxa
+INSERT INTO TechnologyLocatedAt VALUES ('2218','SKylab','1973-05-02','0','0000','274','27900','1973-05-14'); -- nasa
+INSERT INTO TechnologyLocatedAt VALUES ('2219','Tiangong','2021-04-27','1','0000','384','27700','2021-04-29'); -- cmsa
+INSERT INTO TechnologyLocatedAt VALUES ('2220','Tiangong-1','2016-08-31','0','0000','378','27680','2016-09-15'); -- cmsa
 
 INSERT INTO Satellites VALUES ('2201','Communication');
 INSERT INTO Satellites VALUES ('2202','Earth Observation');
