@@ -37,7 +37,7 @@
                         }
                     }
                     
-                    $sql = "INSERT INTO SpaceAgencies VALUES ('$spaceagencyid','$country','$datefounded','$name','$president');";
+                    $sql = "INSERT INTO spaceagencies VALUES ('$spaceagencyid','$country','$datefounded','$name','$president');";
                     if ($conn->query($sql) === TRUE) { 
                         echo "<h2>Record updated successfully</h2>";
                     } 

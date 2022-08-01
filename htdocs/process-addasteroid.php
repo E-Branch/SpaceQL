@@ -38,13 +38,13 @@
                         }
                     }
                     
-                    $sql = "INSERT INTO DiscoveredMinorObjects VALUES ('$minobjid','$name','$diameter', '$spaceagencyid','$discoverydate');";
+                    $sql = "INSERT INTO discoveredminorobjects VALUES ('$minobjid','$name','$diameter', '$spaceagencyid','$discoverydate');";
                     if ($conn->query($sql) === TRUE) { 
                     } 
                     else {
                         echo "Error updating record: " . $conn->error;
                     }
-                    $sql = "INSERT INTO Asteroids VALUES ('$minobjid','$extinctionthreat')";
+                    $sql = "INSERT INTO asteroids VALUES ('$minobjid','$extinctionthreat')";
                     if ($conn->query($sql) === TRUE) { 
                         echo "<h2>Record updated successfully</h2>";
                     } 

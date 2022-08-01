@@ -31,7 +31,7 @@
                     $orbitalspeed = $_POST['orbitalspeed'];
 
                     
-                    $sql = "INSERT INTO Moons VALUES ('$name','$planetid','$diameter', '$rotationalperiod' ,'$orbitalperiod' ,'$orbitaldistance','$orbitalspeed');";
+                    $sql = "INSERT INTO moons VALUES ('$name','$planetid','$diameter', '$rotationalperiod' ,'$orbitalperiod' ,'$orbitaldistance','$orbitalspeed');";
                     if ($conn->query($sql) === TRUE) { 
                         echo "<h2>Record updated successfully</h2>";
                     } 

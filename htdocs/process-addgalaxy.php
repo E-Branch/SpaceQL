@@ -35,7 +35,7 @@
                         }
                     }
                     
-                    $sql = "INSERT INTO Galaxies VALUES ('$galxid','$name','$diameter');";
+                    $sql = "INSERT INTO galaxies VALUES ('$galxid','$name','$diameter');";
                     if ($conn->query($sql) === TRUE) { 
                         echo "<h2>Record updated successfully</h2>";
                     } 

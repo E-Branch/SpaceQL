@@ -36,7 +36,7 @@
                         }
                     }
                     
-                    $sql = "INSERT INTO SolarSystemInGalaxy VALUES ('$solarsysid','$galxid','$name', '$diameter');";
+                    $sql = "INSERT INTO solarsystemingalaxy VALUES ('$solarsysid','$galxid','$name', '$diameter');";
                     if ($conn->query($sql) === TRUE) { 
                         echo "<h2>Record updated successfully</h2>";
                     } 

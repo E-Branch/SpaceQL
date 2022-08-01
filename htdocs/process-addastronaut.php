@@ -36,7 +36,7 @@
                         }
                     }
                     
-                    $sql = "INSERT INTO Astronauts VALUES ('$astroid','$fname','$lname', '$dob');";
+                    $sql = "INSERT INTO astronauts VALUES ('$astroid','$fname','$lname', '$dob');";
                     if ($conn->query($sql) === TRUE) { 
                         echo "<h2>Record updated successfully</h2>";
                     } 

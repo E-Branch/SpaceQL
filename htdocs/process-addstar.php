@@ -40,17 +40,17 @@
                     }
                     
                     if(strcmp($discoverspaceagency,"NULL") == 0) {
-                        $sql = "INSERT INTO DiscoveredLargeObjects VALUES ('$largeobjid','$name','$diameter','$mass',NULL,'$discoverdate');";
+                        $sql = "INSERT INTO discoveredlargeobjects VALUES ('$largeobjid','$name','$diameter','$mass',NULL,'$discoverdate');";
                     }
                     else {
-                        $sql = "INSERT INTO DiscoveredLargeObjects VALUES ('$largeobjid','$name','$diameter','$mass','$discoverspaceagency','$discoverdate');";
+                        $sql = "INSERT INTO discoveredlargeobjects VALUES ('$largeobjid','$name','$diameter','$mass','$discoverspaceagency','$discoverdate');";
                     }
                     if ($conn->query($sql) === TRUE) { 
                     } 
                     else {
                         echo "Error updating record: " . $conn->error;
                     }
-                    $sql = "INSERT INTO Stars VALUES ('$largeobjid','$composition');";
+                    $sql = "INSERT INTO stars VALUES ('$largeobjid','$composition');";
                     if ($conn->query($sql) === TRUE) { 
                         echo "<h2>Record updated successfully</h2>";
                     } 

@@ -40,13 +40,13 @@
                         }
                     }
                     
-                    $sql = "INSERT INTO TechnologyLocatedAt VALUES ('$techid','$name','$datecreated', '$operational','$largeobjid','$orbitaldistance','$orbitalspeed','$arrivaldate');";
+                    $sql = "INSERT INTO technologyLocatedAt VALUES ('$techid','$name','$datecreated', '$operational','$largeobjid','$orbitaldistance','$orbitalspeed','$arrivaldate');";
                     if ($conn->query($sql) === TRUE) { 
                     } 
                     else {
                         echo "Error updating record: " . $conn->error;
                     }
-                    $sql = "INSERT INTO Rovers VALUES ('$techid')";
+                    $sql = "INSERT INTO rovers VALUES ('$techid')";
                     if ($conn->query($sql) === TRUE) { 
                         echo "<h2>Record updated successfully</h2>";
                     } 
