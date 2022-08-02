@@ -1,0 +1,52 @@
+Selection Query:
+
+SELECT name,diameter 
+FROM $table 
+WHERE diameter $condition $diameter
+
+
+
+Projection Query:
+
+SELECT $attribute 
+FROM technologylocatedat
+
+
+
+Join Query:
+
+select * from technologylocatedat,discoveredlargeobjects,satellites where technologylocatedat.techid = satellites.satid and discoveredlargeobjects.largeobjid = technologylocatedat.largeobjid
+
+select * from technologylocatedat,discoveredlargeobjects,telescopes where technologylocatedat.techid = telescopes.telid and discoveredlargeobjects.largeobjid = technologylocatedat.largeobjid
+
+select * from technologylocatedat,discoveredlargeobjects,rovers where technologylocatedat.techid = rovers.rovid and discoveredlargeobjects.largeobjid = technologylocatedat.largeobjid
+
+select * from technologylocatedat,discoveredlargeobjects,spacestations where technologylocatedat.techid = spacestations.spacestationid and discoveredlargeobjects.largeobjid = technologylocatedat.largeobjid
+
+
+
+
+Aggregation Query:
+
+select count(*) from $table
+
+
+
+
+Nested Aggregation Query:
+
+SELECT own.spaceagencyid, spaceagencies.name, count(own.techid) 
+                            FROM own, spaceagencies 
+                            WHERE own.spaceagencyid = spaceagencies.spaceagencyid 
+                            GROUP BY own.spaceagencyid 
+                            HAVING count(own.techid) $condition ALL((SELECT AVG(numtech.c) AS a 
+                                                                     FROM (SELECT spaceagencyid, count(*) as c 
+                                                                     FROM own 
+                                                                     GROUP BY spaceagencyid) AS numtech));
+
+
+
+
+Division Query:
+
+select $attribute from astronauts where astroid in (select astroid from stationed)
