@@ -365,28 +365,6 @@
                 <h2>Add a comet</h2>
             </form>
 
-            <!--photo -->
-            <form action="process-addphoto.php" method="post" class="services__card services__card-17" enctype="multipart/form-data">
-                <h3>Upload Photo (must be type PNG):</h3>
-                <input name="photo" type="file" accept="image/png" id="photofile">
-                </br>
-                <h3>Telescope that took the photo:</h3>
-                <?php
-                    $result = $conn->query("select telescopes.telid, technologylocatedat.name from telescopes join technologylocatedat on telescopes.telid = technologylocatedat.techid");
-                    echo "<select name='telid'>";
-                    while($row = $result->fetch_assoc()) {
-                        $telescopeid = $row['telid'];
-                        $telescopename = $row['name'];
-                        echo '<option value="'.$telescopeid.'">'.$telescopename.'</option>';
-                        
-                    }
-                ?>
-                </br>
-                <input name="datetaken" type="text" placeholder="Date Taken YYYY-MM-DD">
-                <input type="submit" value="Insert" name="submit">
-                <h2>Add a photo</h2>
-            </form>
-
         </div>
     </div>
 
