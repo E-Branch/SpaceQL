@@ -272,15 +272,3 @@ technologylocatedat(techid)
 ON DELETE CASCADE
 ON UPDATE CASCADE
 );
-
-
-CREATE TABLE photosfromtelescope (
-filename char(30) PRIMARY KEY,
-filedata VARBINARY(65000),
-telescopeid integer,
-dateandtime datetime,
-FOREIGN KEY (telescopeid) REFERENCES
-telescopes(telid)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
-);
