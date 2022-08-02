@@ -58,20 +58,16 @@
                     }
 
                     include 'connect.php';
-                    $table = $_POST['table'];
+                    $condition = $_POST['condition'];
                     $conn = OpenCon();
-                    if(strcmp($table,"satellites") == 0) {
-                        $sql = "select * from technologylocatedat,discoveredlargeobjects,satellites where technologylocatedat.techid = satellites.satid and discoveredlargeobjects.largeobjid = technologylocatedat.largeobjid";
-                    }
-                    if(strcmp($table,"telescopes") == 0) {
-                        $sql = "select * from technologylocatedat,discoveredlargeobjects,telescopes where technologylocatedat.techid = telescopes.telid and discoveredlargeobjects.largeobjid = technologylocatedat.largeobjid";
-                    }
-                    if(strcmp($table,"rovers") == 0) {
-                        $sql = "select * from technologylocatedat,discoveredlargeobjects,rovers where technologylocatedat.techid = rovers.rovid and discoveredlargeobjects.largeobjid = technologylocatedat.largeobjid";
-                    }
-                    if(strcmp($table,"spacestations") == 0) {
-                        $sql = "select * from technologylocatedat,discoveredlargeobjects,spacestations where technologylocatedat.techid = spacestations.spacestationid and discoveredlargeobjects.largeobjid = technologylocatedat.largeobjid";
-                    }
+                    $sql = "SELECT own.spaceagencyid, spaceagencies.name, count(own.techid) 
+                            FROM own, spaceagencies 
+                            WHERE own.spaceagencyid = spaceagencies.spaceagencyid 
+                            GROUP BY own.spaceagencyid 
+                            HAVING count(own.techid) $condition ALL((SELECT AVG(numtech.c) AS a 
+                                                                     FROM (SELECT spaceagencyid, count(*) as c 
+                                                                     FROM own 
+                                                                     GROUP BY spaceagencyid) AS numtech));";
                     myTable($conn,$sql);
 
                 ?>

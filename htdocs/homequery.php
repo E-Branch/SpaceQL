@@ -154,7 +154,51 @@
                 </br>                    
                 </br>
                 </br>
-                
+
+
+                <form method="post" action="nestedaggregation.php">
+                    <h2>Nested aggregation query space agencies where the number of technology owned is more/less than the average space agency</h2>
+                    </br>
+                    </br>
+
+                    <h3>Choose condition</h3>
+                    <select name="condition">
+                        <option value=">"> > (More)</option>
+                        <option value="<"> < (Less)</option>
+                    </select>
+                    </br>
+                    </br>
+
+                    <input type="submit" value="Submit Nested Aggregation">
+                </form>
+                </br>
+                </br>                    
+                </br>
+                </br>
+
+
+                <form method="post" action="divisionquery.php">
+                    <h2>Division query for all astronauts stationed on space stations</h2>
+                    </br>
+                    </br>
+
+                    <h3>Choose astronaut attributes</h3>
+                    <select name="attribute">
+                        <option value="fname">First Name</option>
+                        <option value="lname">Last Name</option>
+                        <option value="dob">dob</option>
+                        <option value="fname,lname">First Name, Last Name</option>
+                        <option value="fname,lname,dob">First Name, Last Name, dob</option>
+                    </select>
+                    </br>
+                    </br>
+                    <input type="submit" value="Submit division">
+                </form>
+                </br>
+                </br>                    
+                </br>
+                </br>
+
 
 
             </div>

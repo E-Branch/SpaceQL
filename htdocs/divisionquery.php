@@ -58,20 +58,9 @@
                     }
 
                     include 'connect.php';
-                    $table = $_POST['table'];
+                    $attribute = $_POST['attribute'];
                     $conn = OpenCon();
-                    if(strcmp($table,"satellites") == 0) {
-                        $sql = "select * from technologylocatedat,discoveredlargeobjects,satellites where technologylocatedat.techid = satellites.satid and discoveredlargeobjects.largeobjid = technologylocatedat.largeobjid";
-                    }
-                    if(strcmp($table,"telescopes") == 0) {
-                        $sql = "select * from technologylocatedat,discoveredlargeobjects,telescopes where technologylocatedat.techid = telescopes.telid and discoveredlargeobjects.largeobjid = technologylocatedat.largeobjid";
-                    }
-                    if(strcmp($table,"rovers") == 0) {
-                        $sql = "select * from technologylocatedat,discoveredlargeobjects,rovers where technologylocatedat.techid = rovers.rovid and discoveredlargeobjects.largeobjid = technologylocatedat.largeobjid";
-                    }
-                    if(strcmp($table,"spacestations") == 0) {
-                        $sql = "select * from technologylocatedat,discoveredlargeobjects,spacestations where technologylocatedat.techid = spacestations.spacestationid and discoveredlargeobjects.largeobjid = technologylocatedat.largeobjid";
-                    }
+                    $sql = "select $attribute from astronauts where astroid in (select astroid from stationed)";
                     myTable($conn,$sql);
 
                 ?>
