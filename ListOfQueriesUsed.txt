@@ -33,7 +33,7 @@ select count(*) from $table
 
 
 
-Nested Aggregation Query:
+Nested Aggregation Query with GROUP BY:
 
 SELECT own.spaceagencyid, spaceagencies.name, count(own.techid) 
                             FROM own, spaceagencies 
