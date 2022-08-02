@@ -29,18 +29,18 @@
                 <h2>(Leave empty if no change)</h2>
                 <h3>Select which meteor to update:</h3>
                 <?php
-                    $result = $conn->query("select meteorid from meteors");
-                    echo "<select name='meteorid'>";
+                    $result = $conn->query("select meteroid from meteors");
+                    echo "<select name='meteroid'>";
                     while($row = $result->fetch_assoc()) {
-                        unset($meteorid);
-                        $meteorid = $row['meteorid'];
+                        unset($meteroid);
+                        $meteroid = $row['meteroid'];
                         unset($result2);
-                        $result2 = $conn->query("select name from discoveredminorobjects where $meteorid=minobjid");
+                        $result2 = $conn->query("select name from discoveredminorobjects where $meteroid=minobjid");
                         $row2 = $result2->fetch_assoc();
                         unset($name);
-                        $meteorid = $row['meteorid'];
+                        $meteroid = $row['meteroid'];
                         $name = $row2['name'];
-                        echo '<option value="'.$meteorid.'">'.$name.'</option>';
+                        echo '<option value="'.$meteroid.'">'.$name.'</option>';
                     }
                     echo "</select>";
                 ?>
@@ -55,7 +55,7 @@
                 
                 </br>
                 </br>
-                <input name="discoverydate" type="text" placeholder="Date Created YYYY-MM-DD">
+                <input name="discoverydate" type="text" placeholder="Date Discovered YYYY-MM-DD">
 
                 <input type="submit" value="Update" name="submit">
             </form>

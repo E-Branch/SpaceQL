@@ -29,7 +29,7 @@
                 <h2>(Leave empty if no change)</h2>
                 <h3>Select which satellite to update:</h3>
                 <?php
-                    $result = $conn->query("select satid from sattelites");
+                    $result = $conn->query("select satid from satellites");
                     echo "<select name='satid'>";
                     while($row = $result->fetch_assoc()) {
                         unset($satid);

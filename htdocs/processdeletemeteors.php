@@ -23,13 +23,13 @@
                     include 'connect.php';
                     $conn = OpenCon();
 
-                    $meteorid = $_POST['meteorid'];
+                    $meteorid = $_POST['meteroid'];
 
                     $sql = "delete from discoveredminorobjects where $meteorid=minobjid";
                     $result = $conn->query($sql);
                     if($conn->query($sql) === TRUE) {
                         unset($sql);
-                        $sql = "delete from meteors where $meteorid=meteorid";
+                        $sql = "delete from meteors where $meteorid=meteroid";
                         if($conn->query($sql) === TRUE) {
                             echo "<h2>Entity deleted</h2>";
                         }

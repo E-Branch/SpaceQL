@@ -28,7 +28,7 @@
                 <h1>Delete sattelite entities</h1>
                 <h3>Select which sattelite to delete:</h3>
                 <?php
-                    $result = $conn->query("select satid from sattelites");
+                    $result = $conn->query("select satid from satellites");
                     echo "<select name='satid'>";
                     while($row = $result->fetch_assoc()) {
                         unset($satid);

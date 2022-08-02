@@ -40,7 +40,6 @@
                     if(strcmp($datecreated,"") == 0) {
                         unset($datecreated);
                         $datecreated = $row['datecreated'];
-                        echo "<h2>$datecreated</h2>";
                     }
                     if(strcmp($operational,"") == 0) {
                         unset($operational);

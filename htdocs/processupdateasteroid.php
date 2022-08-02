@@ -37,7 +37,6 @@
                     if(strcmp($diameter,"") == 0) {
                         unset($diameter);
                         $diameter = $row['diameter'];
-                        echo "<h2>$diameter</h2>";
                     }
                     if(strcmp($discoverydate,"") == 0) {
                         unset($discoverydate);
@@ -56,7 +55,7 @@
                     }
 
                     unset($sql);
-                    $sql = "update technologylocatedat set diameter=$diameter,discoverydate='$discoverydate' where $astroidid=minobjid;";
+                    $sql = "update discoveredminorobjects set diameter=$diameter,discoverydate='$discoverydate' where $astroidid=minobjid;";
                     
                     if($conn->query($sql) === TRUE) {
                         unset($sql);

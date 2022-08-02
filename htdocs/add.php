@@ -68,7 +68,7 @@
                 <input name="composition" type="text" placeholder="Composition">
                 <h3>Agency that made the discovery:<h3>
                 <?php
-                    $result = $conn->query("select spaceAgencyid, name from spaceagencies");
+                    $result = $conn->query("select spaceagencyid, name from spaceagencies");
                     echo "<select name='spaceagencyid'>";
                     while($row = $result->fetch_assoc()) {
                         unset($spaceagencyid,$name);
@@ -76,6 +76,7 @@
                         $name = $row['name'];
                         echo '<option value="'.$spaceagencyid.'">'.$name.'</option>';
                     }
+                    echo '<option value="NULL">NULL</option>';
                     echo "</select>";
 
                 ?>
@@ -364,6 +365,8 @@
                 <input type="submit" value="Insert">
                 <h2>Add a comet</h2>
             </form>
+
+
 
         </div>
     </div>

@@ -23,9 +23,9 @@
                     include 'connect.php';
                     $conn = OpenCon();
 
-                    $meteorid = $_POST['meteorid'];
+                    $meteroid = $_POST['meteroid'];
 
-                    $sql = "select diameter,discoverydate from discoveredminorobjects where $meteorid=minobjid";
+                    $sql = "select diameter,discoverydate from discoveredminorobjects where $meteroid=minobjid";
                     $result = $conn->query($sql);
                     $row = $result->fetch_assoc();
 
@@ -37,30 +37,29 @@
                     if(strcmp($diameter,"") == 0) {
                         unset($diameter);
                         $diameter = $row['diameter'];
-                        echo "<h2>$diameter</h2>";
                     }
                     if(strcmp($discoverydate,"") == 0) {
                         unset($discoverydate);
-                        $discoverydate = $row['discov$discoverydate'];
+                        $discoverydate = $row['discoverydate'];
                     }
                         
                     unset($sql,$result,$row);
 
-                    $sql = "select type from meteors where $meteorid=meteorid";
+                    $sql = "select type from meteors where $meteroid=meteroid";
                     $result = $conn->query($sql);
                     $row = $result->fetch_assoc();
-                    
+
                     if(strcmp($type,"") == 0) {
                         unset($type);
                         $type = $row['type'];
                     }
 
                     unset($sql);
-                    $sql = "update technologylocatedat set diameter=$diameter,discoverydate='$discoverydate' where $meteorid=minobjid;";
-                    
+                    $sql = "update discoveredminorobjects set diameter=$diameter,discoverydate='$discoverydate' where $meteroid=minobjid;";
+
                     if($conn->query($sql) === TRUE) {
                         unset($sql);
-                        $sql = "update meteors set type='$type' where $meteorid=meteorid;";
+                        $sql = "update meteors set type='$type' where $meteroid=meteroid;";
                         if($conn->query($sql) === TRUE) {
                             echo "<h2>Updated successfully!</h2>";
                         }

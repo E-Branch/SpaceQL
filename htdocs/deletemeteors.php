@@ -28,19 +28,19 @@
                 <h1>Delete meteors entities</h1>
                 <h3>Select which meteors to delete:</h3>
                 <?php
-                    $result = $conn->query("select meteorid from meteors");
-                    echo "<select name='meteorid'>";
+                    $result = $conn->query("select meteroid from meteors");
+                    echo "<select name='meteroid'>";
                     while($row = $result->fetch_assoc()) {
-                        unset($meteorid);
-                        $meteorid = $row['meteorid'];
+                        unset($meteroid);
+                        $meteroid = $row['meteroid'];
                         unset($result2);
-                        $result2 = $conn->query("select name from discoveredminorobjects where $meteorid=minobjid");
+                        $result2 = $conn->query("select name from discoveredminorobjects where $meteroid=minobjid");
                         $row2 = $result2->fetch_assoc();
                         unset($name);
-                        $meteorid = $row['meteorid'];
+                        $meteroid = $row['meteroid'];
                         $name = $row2['name'];
-                        //echo '<option value="'.$meteorid.'">'.$name.'</option>';
-                        echo "<option value=\"$meteorid\">$meteorid $name</option>";
+                        //echo '<option value="'.$meteroid.'">'.$name.'</option>';
+                        echo "<option value=\"$meteroid\">$meteroid $name</option>";
                     }
                     echo "</select>";
                 ?>
