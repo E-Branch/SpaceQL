@@ -272,7 +272,8 @@ technologylocatedat(techid)
 ON DELETE CASCADE
 ON UPDATE CASCADE
 );
--------INSERT-------
+
+
 INSERT INTO spaceagencies VALUES ('1','USA','1958-07-29','NASA','Bill Nelson');
 INSERT INTO spaceagencies VALUES ('2','USA','2002-03-14','SpaceX','Elon Musk');
 INSERT INTO spaceagencies VALUES ('3','China','1993-04-22','CNSA','Zhang Kejian');
