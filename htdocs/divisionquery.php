@@ -58,10 +58,15 @@
                     }
 
                     include 'connect.php';
-                    $attribute = $_POST['attribute'];
+                    $query = $_POST['query'];
                     $conn = OpenCon();
-                    $sql = "select $attribute from technologylocatedat WHERE NOT EXISTS (SELECT a.astroid from astronauts a WHERE NOT EXISTS (SELECT s.astroid from stationed s WHERE a.astroid=s.astroid AND technologylocatedat.techid=s.spacestationid))";
-                    myTable($conn,$sql);
+                    if( $query == "spacestation") {
+                        $sql = "select * from technologylocatedat WHERE NOT EXISTS (SELECT a.astroid from astronauts a WHERE NOT EXISTS (SELECT s.astroid from stationed s WHERE a.astroid=s.astroid AND technologylocatedat.techid=s.spacestationid))";
+                        myTable($conn,$sql);
+                    } else {
+                        $sql = "select a.* FROM astronauts a WHERE NOT EXISTS (SELECT ss.spacestationid from spacestations ss WHERE NOT EXISTS (Select st.spacestationid FROM stationed st WHERE st.astroid=a.astroid AND ss.spacestationid=st.spacestationid))";
+                        myTable($conn,$sql);
+                    }
 
                 ?>
             </div>
