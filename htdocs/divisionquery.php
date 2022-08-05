@@ -60,7 +60,7 @@
                     include 'connect.php';
                     $attribute = $_POST['attribute'];
                     $conn = OpenCon();
-                    $sql = "select $attribute from astronauts where astroid in (select astroid from stationed)";
+                    $sql = "select $attribute from technologylocatedat WHERE NOT EXISTS (SELECT a.astroid from astronauts a WHERE NOT EXISTS (SELECT s.astroid from stationed s WHERE a.astroid=s.astroid AND technologylocatedat.techid=s.spacestationid))";
                     myTable($conn,$sql);
 
                 ?>
