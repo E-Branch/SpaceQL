@@ -178,16 +178,14 @@
 
 
                 <form method="post" action="divisionquery.php">
-                    <h2>Division query for space station which all astronauts have been to</h2>
+                    <h2>Division Queries</h2>
                     </br>
                     </br>
 
-                    <h3>Choose astronaut attributes</h3>
-                    <select name="attribute">
-                        <option value="name">Name</option>
-                        <option value="datecreated">Created Date</option>
-                        <option value="operational">Operational</option>
-                        <option value="name,datecreated,operational">Name, Created Date, Operational</option>
+                    <h3>Choose Query</h3>
+                    <select name="query">
+                        <option value="spacestation">Space station which all astronauts have been to</option>
+                        <option value="astronauts">Astronauts that have been to all space stations</option>
                     </select>
                     </br>
                     </br>
